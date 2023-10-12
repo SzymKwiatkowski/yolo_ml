@@ -1,2 +1,5 @@
 .vscode
 lightning_logs
+data
+env
+venv
