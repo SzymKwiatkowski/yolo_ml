@@ -3,3 +3,7 @@ lightning_logs
 data
 env
 venv
+.pytest_cache
+yolo*
+*.jpg
+runs

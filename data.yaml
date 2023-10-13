@@ -1,0 +1,18 @@
+path: data
+train: train/images
+val: valid/images
+test: test/images
+
+data_path: data
+images_path: images
+labels_path: labels
+
+nc: 12
+names: ['Car', 'TL', 'bicycle', 'bike', 'bus', 'car', 'cng', 'easybike', 'person', 'rickshaw', 'tractor', 'truck']
+
+roboflow:
+  workspace: car-detection-2idu3
+  project: car-detection-uswqo
+  version: 2
+  license: MIT
+  url: https://universe.roboflow.com/car-detection-2idu3/car-detection-uswqo/dataset/2
