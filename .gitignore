@@ -7,3 +7,4 @@ venv
 yolo*
 *.jpg
 runs
+*__pycache__*
