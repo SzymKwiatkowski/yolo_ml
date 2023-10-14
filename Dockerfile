@@ -47,8 +47,12 @@ fi \n\
 \n\
 export USER=${USERNAME} \n' >> /home/$USERNAME/.bashrc
 
+# Install requirements
 COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt 
+
+# Install formatting provider
+RUN pip3 install autopep8 
 
 RUN mkdir /home/ml
 

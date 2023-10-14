@@ -1,12 +1,12 @@
 {
     "name": "Pytorch Yolo development container",
     "privileged": true,
-    "remoteUser": "USERNAME",
+    "remoteUser": "user",
     "build": {
         "context": "${localWorkspaceFolder}",
         "dockerfile": "${localWorkspaceFolder}/Dockerfile",
         "args": {
-            "USERNAME": "USERNAME"
+            "USERNAME": "user"
         }
     },
     "workspaceFolder": "/home/ml",
@@ -14,12 +14,8 @@
     "customizations": {
         "vscode": {
             "extensions":[
-                "ms-vscode.cpptools",
-                "ms-vscode.cpptools-themes",
-                "twxs.cmake",
                 "donjayamanne.python-extension-pack",
-                "eamodio.gitlens",
-                "ms-iot.vscode-ros"
+                "ms-python.autopep8"
             ]
         }
     },
