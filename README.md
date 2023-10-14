@@ -31,3 +31,11 @@ Using comet ml requires you to export environmental variable:
 ```bash
 export COMETML_KEY=your_key
 ```
+
+# Using remote development extension
+Repository setup:
+- By default memory limit(shm-size in `devcontainer.json`) is set to 8GB
+- In order to use container set `remoteUser` and `USERNAME` variable in `devcontainer.json` also in Dockerfile set COMETML_KEY variable and set `USERNAME` arg.
+- Copy data to datasets directory
+- Install remote development extension
+- Run `rebuild and reopen container` (with `CTRL+SHIFT+P` shortcut) to build container and attach to it. Afterwards run `Reopen container`.

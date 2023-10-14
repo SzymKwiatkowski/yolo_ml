@@ -8,3 +8,4 @@ yolo*
 *.jpg
 runs
 *__pycache__*
+datasets

@@ -1,0 +1,43 @@
+{
+    "name": "Pytorch Yolo development container",
+    "privileged": true,
+    "remoteUser": "USERNAME",
+    "build": {
+        "context": "${localWorkspaceFolder}",
+        "dockerfile": "${localWorkspaceFolder}/Dockerfile",
+        "args": {
+            "USERNAME": "USERNAME"
+        }
+    },
+    "workspaceFolder": "/home/ml",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/ml,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions":[
+                "ms-vscode.cpptools",
+                "ms-vscode.cpptools-themes",
+                "twxs.cmake",
+                "donjayamanne.python-extension-pack",
+                "eamodio.gitlens",
+                "ms-iot.vscode-ros"
+            ]
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "unix:0",
+        "ROS_LOCALHOST_ONLY": "1",
+        "ROS_DOMAIN_ID": "42"
+    },
+    "runArgs": [
+        "--net=host",
+        "-e", "DISPLAY=${env:DISPLAY}",
+        // Uncomment to turn on nvidia container toolkit support
+        "--runtime=nvidia",
+        "--gpus", "all",
+        "--shm-size", "8G"
+    ],
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
+    ]
+}
