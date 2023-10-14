@@ -1,25 +1,8 @@
-from ultralytics.models.yolo.detect import DetectionTrainer
-from ultralytics.data.dataset import YOLODataset
 from ultralytics import YOLO
-from tempfile import TemporaryDirectory
-import utils.dataloader as dl
-from lightning.pytorch import callbacks
-import torchmetrics
-import lightning.pytorch as pl
-import numpy as np
-import matplotlib.pyplot as plt
-from torchvision.transforms import ToTensor
-from torchvision import datasets
-from torch.utils.data import DataLoader
-import torch.nn as nn
-import torch
-import time
-import yaml
 import argparse
 from pathlib import Path
 import os
 import sys
-import comet_ml
 from comet_ml import Experiment
 from comet_ml.integration.pytorch import log_model
 

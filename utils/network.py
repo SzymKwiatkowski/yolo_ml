@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torchvision
 
 class Network(nn.Module):
     def __init__(self, num_classes):
@@ -67,3 +68,30 @@ class Network(nn.Module):
         box_t = F.sigmoid(box_t)
 
         return [class_t, box_t]
+    
+class ResnetBaseNetwork(nn.Module):
+    def __init__(self, num_classes):
+        super(ResnetBaseNetwork, self).__init__()
+        
+        self.resnet = torchvision.models.resnet50()
+        
+        self.class_l = torch.nn.Sequential(
+            nn.Linear(in_features=1000, out_features=512),
+            nn.ReLU(inplace=True),
+            nn.Linear(in_features=512, out_features=num_classes)
+        )
+        
+        self.box_l = torch.nn.Sequential(
+            nn.Linear(in_features=1000, out_features=512),
+            nn.ReLU(inplace=True),
+            nn.Linear(in_features=512, out_features=num_classes)
+        )
+    
+    def forward(self, t):
+        t = self.resnet(t)
+        
+        cls_t = self.class_l(t)
+        
+        box_t = self.box_l(t)
+        
+        return [cls_t, box_t]

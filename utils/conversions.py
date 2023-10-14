@@ -8,8 +8,6 @@ def get_dataframe_annotations_class_string(ann_path, img_path, dict):
     # Read txts  
     for files in os.walk(ann_path):
         for file in files[2]:
-            print (file + "-->start!")
-
             # Read image and get its size attributes
             img_name = os.path.splitext(file)[0] + '.jpg'
             fileimgpath = os.path.join(img_path ,img_name)
@@ -44,8 +42,6 @@ def get_dataframe_annotations(ann_path, img_path):
     # Read txts  
     for files in os.walk(ann_path):
         for file in files[2]:
-            print (file + "-->start!")
-
             # Read image and get its size attributes
             img_name = os.path.splitext(file)[0] + '.jpg'
             fileimgpath = os.path.join(img_path ,img_name)
