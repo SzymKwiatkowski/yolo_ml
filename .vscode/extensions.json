@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "donjayamanne.python-extension-pack",
+        "ms-python.autopep8",
+        "ms-vscode-remote.vscode-remote-extensionpack"
+    ]
+}
