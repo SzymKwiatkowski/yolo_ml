@@ -6,6 +6,9 @@ test: test/images
 data_path: data
 images_path: images
 labels_path: labels
+train_c: train
+val_c: valid
+test_c: test
 
 nc: 12
 names: ['Car', 'TL', 'bicycle', 'bike', 'bus', 'car', 'cng', 'easybike', 'person', 'rickshaw', 'tractor', 'truck']
